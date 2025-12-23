@@ -1,10 +1,17 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "YouTube Video AutoSummarizer",
+  "description": "Utilizes the Gemini feature to summarize YouTube Videos on navigation to one.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
-  }
+  },
+  "content-scripts" : [
+    {
+        "js": [ "scripts/content.js" ],
+        "matches": [ "https://youtube.com/watch?v=*" ]
+    }
+
+  ]
 }
